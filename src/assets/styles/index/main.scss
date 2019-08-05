@@ -78,6 +78,44 @@ body {
       &_active {
         background: url("./assets/styles/img/small.svg") no-repeat 10% 50%;
       }
+      &_type {
+        color: $c_darkblue;
+        font-size: 12px;
+        @include f_700;
+        min-width: 70px;
+        div{
+          height: 24px;
+          width: 34px;
+          border-radius: 1px;
+          text-align: center;
+          line-height: 24px;
+        }
+      }
+      .type-em {
+        div {
+          background-color: $c_bg_lilac;
+        }
+      }
+      .type-sh {
+        div {
+          background-color: $c_bg_orange;
+        }
+      }
+      .type-sv {
+        div {
+          background-color: $c_bg_lightred;
+        }
+      }
+      .type-gt {
+        div {
+          background-color: $c_bg_lighgreen;
+        }
+      }
+      .type-un {
+        div {
+          background-color: $c_bg_lighgray;
+        }
+      }
     }
   }
 }
