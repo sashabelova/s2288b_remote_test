@@ -1,0 +1,70 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+body {
+  height: 100%;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: $c_f_main;
+  background-color: $c_bg;
+}
+
+.wrapper {
+  max-width: 1722px;
+  text-align: left;
+  width: 100%;
+  margin: auto;
+  padding: 99px;
+}
+
+.table-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  @include f_sb;
+  margin-bottom: 17px;
+
+  &_users {
+    color: $c_f_header;
+    font-size: 18px;
+    line-height: 22px;
+    background: url("./assets/styles/img/users.png") no-repeat 15% 0;
+    padding: 7px 0 7px 55px;
+  }
+  &_selected {
+    color: $c_lightgray;
+    font-size: 12px;
+    line-height: 15px;
+    padding: 3px 60px 3px 0;
+    background: url("./assets/styles/img/Questionmark.svg") no-repeat 80% 0;
+  }
+}
+
+
+.users-table {
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    tr {
+      border-top: 1px solid $c_gray_border;
+      height: 55px;
+    }
+    tr th {
+      @include f_b;
+      font-size: 12px;
+      text-transform: uppercase;
+      line-height: 15px;
+
+    }
+  }
+}

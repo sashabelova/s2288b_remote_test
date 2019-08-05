@@ -1,0 +1,12 @@
+@import "fonts.scss";
+@import "colors.scss";
+
+// Font size
+@function calculate-rem($size) {
+	$rem-size: $size / 16;
+	@return $rem-size * 1rem;
+}
+
+@mixin font-size($size) {
+	font-size: calculate-rem($size);
+}
