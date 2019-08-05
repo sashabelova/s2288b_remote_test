@@ -50,7 +50,6 @@ body {
   }
 }
 
-
 .users-table {
   table {
     width: 100%;
@@ -76,14 +75,42 @@ body {
         cursor: pointer;
       }
       &_active {
-        background: url("./assets/styles/img/small.svg") no-repeat 10% 50%;
+        .out {
+          height: 14px;
+          width: 24px;
+          border: 1px solid $c_bg_active_border;
+          border-radius: 6.5px;
+          background-color: $c_bg_active;
+          position: relative;
+        }
+        .in {
+          position: absolute;
+          box-sizing: border-box;
+          height: 11px;
+          width: 11px;
+          border: 1px solid $c_bg_active_border;
+          background-color: $c_white;
+          border-radius: 50%;
+          right: 0;
+          top: 0;
+        }
+      }
+      .nonactive {
+        .out {
+          border: 1px solid $c_bg_nonactive_border;
+          background-color: $c_bg_nonactive;
+        }
+        .in {
+          border: 1px solid $c_bg_nonactive_border;
+          left: 0;
+        }
       }
       &_type {
         color: $c_darkblue;
         font-size: 12px;
         @include f_700;
         min-width: 70px;
-        div{
+        div {
           height: 24px;
           width: 34px;
           border-radius: 1px;

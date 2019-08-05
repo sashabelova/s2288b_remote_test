@@ -17,21 +17,31 @@ class User extends Component {
 
         if (this.props.type === 'Employee') {
             type =
-                <td className="table-content_type type-em"><div>EM</div></td>
+                <td className="table-content_type type-em">
+                    <div>EM</div>
+                </td>
         } else if (this.props.type === 'Stakeholder') {
             type =
-                <td className="table-content_type type-sh"><div>SH</div></td>
+                <td className="table-content_type type-sh">
+                    <div>SH</div>
+                </td>
         }
         else if (this.props.type === 'Supervisor') {
             type =
-                <td className="table-content_type type-sv"><div>SV</div></td>
+                <td className="table-content_type type-sv">
+                    <div>SV</div>
+                </td>
         }
         else if (this.props.type === 'Guest') {
             type =
-                <td className="table-content_type type-gt"><div>GT</div></td>
+                <td className="table-content_type type-gt">
+                    <div>GT</div>
+                </td>
         } else {
             type =
-                <td className="table-content_type type-un"><div>UN</div></td>
+                <td className="table-content_type type-un">
+                    <div>UN</div>
+                </td>
         }
 
         return type;
@@ -48,8 +58,16 @@ class User extends Component {
                 <td>{this.props.phone}</td>
 
 
-                { this.state.active === true ? <td onClick={this.toggleStatus} className="table-content_active"></td> :
-                    <td onClick={this.toggleStatus} className="table-content_nonactive">Not active</td>
+                { this.state.active === true ? <td onClick={this.toggleStatus} className="table-content_active">
+                    <div className="out">
+                        <div className="in"></div>
+                    </div>
+                </td> :
+                    <td onClick={this.toggleStatus} className="table-content_active nonactive">
+                        <div className="out">
+                            <div className="in"></div>
+                        </div>
+                    </td>
                 }
 
 
