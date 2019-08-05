@@ -1,3 +1,4 @@
 export {
-    initUsers
+    initUsers,
+    statusChange
 } from './users';

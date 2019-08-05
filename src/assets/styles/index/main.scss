@@ -31,7 +31,7 @@ body {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  @include f_sb;
+  @include f_500;
   margin-bottom: 17px;
 
   &_users {
@@ -60,11 +60,24 @@ body {
       height: 55px;
     }
     tr th {
-      @include f_b;
+      @include f_700;
       font-size: 12px;
       text-transform: uppercase;
       line-height: 15px;
-
+    }
+    tr td {
+      @include f_400;
+      font-size: 14px;
+      line-height: 15px;
+    }
+    .table-content {
+      &:hover {
+        background-color: $c_table_hover;
+        cursor: pointer;
+      }
+      &_active {
+        background: url("./assets/styles/img/small.svg") no-repeat 10% 50%;
+      }
     }
   }
 }

@@ -1,9 +1,10 @@
 import * as actionTypes from "./actionTypes";
 import axios from "axios";
-//import url from './api';
+
+const url = process.env.NODE_ENV === 'production' ? "/" : "http://s2288b.front.challenge.dev.monospacelabs.com/";
 
 
-export const clear = () => {
+export const clearUsers = () => {
     return {
         type: actionTypes.CLEAR_USERS,
     };
@@ -24,18 +25,29 @@ export const fetchUsersFailed = () => {
 };
 
 
-export const initUsers = (token) => {
+export const initUsers = () => {
     return dispatch => {
-        //dispatch(clear());
-        // const headers = {
-        //     Authorization: "Bearer " + token
-        // };
-        axios.get('./users.json')
+        dispatch(clearUsers());
+        axios.get(`${url}users`)
             .then(response => {
-                console.log(response.data);
                 dispatch(setUsers(response.data));
             })
             .catch(error => {
+                console.log(error);
+                dispatch(fetchUsersFailed());
+            });
+    };
+};
+
+export const statusChange = (id, active) => {
+    return dispatch => {
+        const userDats = {
+            active: active,
+        };
+
+        axios.put(`${url}users/${id}/`, userDats)
+            .catch(error => {
+                console.log(error);
                 dispatch(fetchUsersFailed());
             });
     };

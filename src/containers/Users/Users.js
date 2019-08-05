@@ -25,7 +25,9 @@ class Users extends Component {
                     <table>
                         <tbody>
                         <tr>
-                            <th>Checkbox</th>
+                            <th>
+                                <input type="checkbox"/>
+                            </th>
                             <th>Type</th>
                             <th>Name</th>
                             <th>Email</th>
@@ -42,6 +44,7 @@ class Users extends Component {
                                 phone={user.phone}
                                 active={user.active}
                                 type={user.type}
+                                status={(id, active) => this.props.onStatusChange(user.id, active)}
                             />
                         )) }
 
@@ -65,6 +68,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
     return {
         onInitUsers: () => dispatch(actions.initUsers()),
+        onStatusChange: (id, active) => dispatch(actions.statusChange(id, active)),
 
     }
 };

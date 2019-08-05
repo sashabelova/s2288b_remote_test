@@ -17,6 +17,11 @@ const usersReducer = (state = initialState, action) => {
                 error: false,
 
             };
+        case actionTypes.CLEAR_USERS:
+            return {
+                ...state,
+                users: []
+            };
 
 
         case actionTypes.FETCH_USERS_FAILED:
